@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ $# -gt 0 ]; then
+  CMD=$1
+  PORT=5554
+  echo "Starting emulator[$PORT]..."
+  mksdcard -l e 512M mysdcard.img
+  emulator64-arm  -avd android23 -no-audio -no-window -sdcard mysdcard.img -port $PORT &
+  wait-for-emulator
+  $CMD
+else
+  echo "No command is specified"
+fi
+
