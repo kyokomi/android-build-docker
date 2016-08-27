@@ -5,7 +5,7 @@ Androidのbuildとemulatorの実行を行えるDockerfileです。
 
 ## Werckerで使う場合
 
-```yml:wercker.yml
+```yml
 build:
   box:
     id: <DockerHub等のID>
