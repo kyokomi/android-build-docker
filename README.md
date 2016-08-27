@@ -24,15 +24,15 @@ build:
     - script:
       name: start emurator
       code: |
-        start-emulator ./gradlew connectedAndroidTest
+        start-emulator ./gradlew connectedAndroidTest --no-daemon
     - script:
       name: "test debug"
       code: |
-        ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR testDebug
+        ./gradlew --full-stacktrace -q --no-daemon --project-cache-dir=$WERCKER_CACHE_DIR testDebug
     - script:
       name: "test debug spoon"
       code: |
-        ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR spoonDebugAndroidTest
+        ./gradlew --full-stacktrace -q --no-daemon --project-cache-dir=$WERCKER_CACHE_DIR spoonDebugAndroidTest
 ```
 
 
